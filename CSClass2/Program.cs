@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSClass2
 {
+    //구조체
     struct Point
     {
         public int x;
