@@ -6,7 +6,32 @@ using System.Threading.Tasks;
 
 namespace CSClass2
 {
-    class Wanted<T>
+    struct Point
+    {
+        public int x;
+        public int y;
+
+        public Point(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Point point;
+            point.x = 10;
+            point.y = 10;
+
+            Console.WriteLine(point.x);
+            Console.WriteLine(point.y);
+        }
+    }
+
+    
+    /*class Wanted<T>
     {
         public T Value; public Wanted(T value)
         {
@@ -67,5 +92,5 @@ namespace CSClass2
             rx = x + vx;
             ry = y + vy;
         }
-    }
+    }*/
 }
