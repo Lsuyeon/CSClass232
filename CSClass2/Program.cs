@@ -6,8 +6,45 @@ using System.Threading.Tasks;
 
 namespace CSClass2
 {
+    //인터페이스
+    class Product : IComparable<Product>
+    {
+        public string Name { get; set; }
+        public int Price { get; set; }
+
+        public override string ToString()
+        {
+            return Name + " : " + Price + "원";
+        }
+
+        public int CompareTo(Product other)
+        {
+            return this.Name.CompareTo(other.Name);
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Product> list = new List<Product> ()
+            { 
+                new Product() { Name = "고구마", Price = 1500 },
+                new Product() { Name = "사과", Price = 2400 },
+                new Product() { Name = "바나나", Price = 1000 },
+                new Product() { Name = "배", Price = 3000 }
+            };
+            //list.Sort();
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+
+
     //구조체
-    struct Point
+    /*struct Point
     {
         public int x;
         public int y;
@@ -29,7 +66,7 @@ namespace CSClass2
             Console.WriteLine(point.x);
             Console.WriteLine(point.y);
         }
-    }
+    }*/
 
     
     /*class Wanted<T>
