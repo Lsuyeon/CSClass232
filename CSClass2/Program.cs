@@ -7,6 +7,26 @@ using System.Threading.Tasks;
 namespace CSClass2
 {
     //인터페이스
+
+
+    class TestClass : IBasic
+    {
+        public int TestInstanceMethod()
+        {
+            throw new NotImplementedException();
+        }
+        public int TestProperty
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
     class Dummy : IDisposable
     {
         public void Dispose()
@@ -50,6 +70,8 @@ namespace CSClass2
                 }
             }
             
+            IBasic basic = new TestClass();
+
         }
     }
 
