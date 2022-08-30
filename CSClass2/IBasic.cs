@@ -8,7 +8,7 @@ namespace CSClass2
 {
     internal interface IBasic
     {
-        //인터페이스 생성
+        //인터페이스
         int TestInstanceMethod();
         int TestProperty { get; set; }
     }
