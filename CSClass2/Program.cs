@@ -81,6 +81,24 @@ namespace CSClass2
             File.WriteAllText(@"c:\TEMP\test.txt", "문자열 메시지를 씁니다");
             Console.WriteLine(File.ReadAllText(@"c:\TEMP\test.txt"));
 
+            using (StreamWriter writer = new StreamWriter(@"c:\temp\test.txt"))
+            {
+                writer.WriteLine("안녕하세요.");
+                writer.WriteLine("StreamWriter 클래스를 사용해서");
+                for (int i = 0; i < 10; i++)
+                {
+                    writer.WriteLine("반복문 - " + i);
+                }
+            }
+            //Console.WriteLine(File.ReadAllText(@"c:\TEMP\test.txt"));
+            using (StreamReader reader = new StreamReader(@"c:\temp\test.txt"))
+            {
+                string line;
+                while((line = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
         }
     }
 
