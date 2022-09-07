@@ -7,10 +7,34 @@ using System.Threading.Tasks;
 
 namespace CSClass2
 {
+    //예외처리
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("입력 : ");
+            string input = Console.ReadLine();
+
+            try
+            {
+                int index = int.Parse(input);
+                Console.WriteLine("입력 숫자 : " + index);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("예외발생");
+                Console.WriteLine(ex.GetType());
+                return;
+            }
+            finally
+            {
+                Console.WriteLine("프로그램이 종료됨");
+            }
+        }
+    }
+
     //인터페이스
-
-
-    class TestClass : IBasic
+    /*class TestClass : IBasic
     {
         public int TestInstanceMethod()
         {
@@ -100,7 +124,7 @@ namespace CSClass2
                 }
             }
         }
-    }
+    }*/
 
 
     //구조체
