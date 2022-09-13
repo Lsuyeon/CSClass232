@@ -12,7 +12,30 @@ namespace CSClass2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("입력 : ");
+            Console.Write("입력 : ");
+            try
+            {
+                string input = Console.ReadLine();
+
+                int[] array = { 54, 273, 32, 103 };
+
+                int index = int.Parse(input);
+                Console.WriteLine("입력 숫자 : " + index);
+                Console.WriteLine("배열 요소 : " + array[index]);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("FormatException 발생");
+                Console.WriteLine(ex.GetType() + "이 발생했습니다"); ;
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine("IndexOutOfRangeException 발생");
+                Console.WriteLine(ex.GetType() + "이 발생했습니다"); ;
+            }
+
+
+            /*Console.WriteLine("입력 : ");
             string input = Console.ReadLine();
 
             try
@@ -24,12 +47,15 @@ namespace CSClass2
             {
                 Console.WriteLine("예외발생");
                 Console.WriteLine(ex.GetType());
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+
                 return;
             }
             finally
             {
                 Console.WriteLine("프로그램이 종료됨");
-            }
+            }*/
         }
     }
 
